@@ -21,6 +21,16 @@ precio.place(x=355,y=60)
 tk.Label(ventana, text="cantidad:", font=("arial",10)).place(x=550, y=60)
 cantida=Entry(ventana, width=20, font=("arial", 10))
 cantida.place(x=625, y=60 )
+#botonañadir 
+bnt_añadir=Button(ventana, text="Añadir", font=("arial", 10))
+bnt_añadir.place(x=150,y=120)
+#botoneliminar
+btn_eliminar=Button(ventana,text="Eliminar", font=("arial",10))
+btn_eliminar.place(x=350, y=120)
+#BOTOBORRAR
+btn_borrar=Button(ventana,text="Borrar",font=("arial",10))
+btn_borrar.place(y=120,x=650)
+
 
 
 ventana.mainloop()
