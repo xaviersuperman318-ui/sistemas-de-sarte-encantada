@@ -51,7 +51,31 @@ def anadir():
             "Error",
             "Ingrese un precio y una cantidad válidos"
         )
-    
+#Botoenimilia
+
+def eliminar():
+    seleccionado = tabla.selection()
+
+    if not seleccionado:
+        messagebox.showwarning(
+            "Aviso",
+            "Seleccione una venta de la tabla"
+        )
+        return
+
+    for item in seleccionado:
+        tabla.delete(item)
+#borrar
+def borrar():
+    respuesta=messagebox.askyesno(
+         "Confirmar",
+         "¿Desea borrar todas las ventas?"
+    )
+    if respuesta:
+        for item in tabla.get_children():
+            tabla.delete(item)
+
+
 #titulo
 texto=tk.Label(ventana, text="Sistema de Arte Encantada", font=("arial", 16))
 texto.grid(row=0, column=0)
@@ -73,10 +97,10 @@ cantida.place(x=625, y=60 )
 bnt_añadir=Button(ventana, text="Añadir", command=anadir, font=("arial", 10))
 bnt_añadir.place(x=150,y=120)
 #botoneliminar
-btn_eliminar=Button(ventana,text="Eliminar", font=("arial",10))
+btn_eliminar=Button(ventana,text="Eliminar",  command=eliminar,font=("arial",10))
 btn_eliminar.place(x=350, y=120)
 #BOTOBORRAR
-btn_borrar=Button(ventana,text="Borrar",font=("arial",10))
+btn_borrar=Button(ventana,text="Borrar",command=borrar,font=("arial",10))
 btn_borrar.place(y=120,x=650)
 # Tabla
 comnula=(
