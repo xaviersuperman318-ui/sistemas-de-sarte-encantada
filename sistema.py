@@ -75,7 +75,15 @@ def borrar():
         for item in tabla.get_children():
             tabla.delete(item)
 
+def calcular_total():
+    total_general = 0
 
+    for item in tabla.get_children():
+        datos = tabla.item(item, "values")
+        precio_total = float(datos[3].replace("$", ""))
+        total_general += precio_total
+
+    tota_label.config(text=f"Total General: ${total_general:.2f}")
 #titulo
 texto=tk.Label(ventana, text="Sistema de Arte Encantada", font=("arial", 16))
 texto.grid(row=0, column=0)
@@ -129,5 +137,9 @@ tabla.place(
     x=100,
     y=180
 )
-
+tota_label=tk.Label(ventana,
+                    text="Total Genera: $0.00",
+                    font=("arial",14 ,"bold")
+                    )
+tota_label.place(x=600,y=420)
 ventana.mainloop()
