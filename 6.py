@@ -214,8 +214,11 @@ def calcular_saldo():
 def generar_nota():
 
     global numero_nota
-
+    direccion = direccion_cliente.get().strip()
+    telefono = telefono_cliente.get().strip()
     cliente = nombre_cliente.get().strip()
+    
+
 
     if cliente == "":
 
@@ -375,6 +378,18 @@ def generar_nota():
         f"Cliente: {cliente}",
         ln=True
     )
+    pdf.cell(
+    0,
+    8,
+    f"Dirección: {direccion}",
+    ln=True
+    )
+    pdf.cell(
+    0,
+    8,
+    f"Teléfono: {telefono}",
+    ln=True
+)
 
     pdf.ln(5)
 
@@ -825,6 +840,54 @@ tabla.column(
 tabla.place(
     x=100,
     y=150
+)
+# ==========================================
+# DIRECCIÓN DEL CLIENTE
+# ==========================================
+
+tk.Label(
+    ventana,
+    text="Dirección:",
+    font=("Arial", 10)
+).place(
+    x=50,
+    y=85
+)
+
+direccion_cliente = Entry(
+    ventana,
+    width=25,
+    font=("Arial", 10)
+)
+
+direccion_cliente.place(
+    x=110,
+    y=85
+)
+
+
+# ==========================================
+# TELÉFONO DEL CLIENTE
+# ==========================================
+
+tk.Label(
+    ventana,
+    text="Teléfono:",
+    font=("Arial", 10)
+).place(
+    x=300,
+    y=85
+)
+
+telefono_cliente = Entry(
+    ventana,
+    width=18,
+    font=("Arial", 10)
+)
+
+telefono_cliente.place(
+    x=365,
+    y=85
 )
 
 
