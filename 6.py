@@ -715,13 +715,14 @@ cantida.place(
 btn_anadir = Button(
     ventana,
     text="Añadir",
+    bg="Blue",
     command=anadir,
     font=("Arial", 10)
 )
 
 btn_anadir.place(
-    x=150,
-    y=100
+    x=180,
+    y=115
 )
 
 
@@ -732,13 +733,14 @@ btn_anadir.place(
 btn_eliminar = Button(
     ventana,
     text="Eliminar",
+    bg="Green",
     command=eliminar,
     font=("Arial", 10)
 )
 
 btn_eliminar.place(
     x=300,
-    y=100
+    y=115
 )
 
 
@@ -749,13 +751,14 @@ btn_eliminar.place(
 btn_borrar = Button(
     ventana,
     text="Borrar",
+    bg="red",
     command=borrar,
     font=("Arial", 10)
 )
 
 btn_borrar.place(
     x=450,
-    y=100
+    y=115
 )
 
 
